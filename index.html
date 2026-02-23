@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Candle Timer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Candle Countdown Timer</h1>
+
+      <section class="controls" aria-label="Timer controls">
+        <div class="preset-buttons">
+          <button class="preset" data-seconds="60">1 minute</button>
+          <button class="preset" data-seconds="120">2 minutes</button>
+          <button class="preset" data-seconds="300">5 minutes</button>
+          <button class="preset" data-seconds="900">15 minutes</button>
+          <button class="preset" data-seconds="3600">1 hour</button>
+        </div>
+
+        <form id="custom-time-form" class="custom-time-form">
+          <label for="custom-minutes">Custom time (minutes)</label>
+          <input
+            id="custom-minutes"
+            name="custom-minutes"
+            type="number"
+            min="0"
+            step="0.1"
+            placeholder="e.g. 3.5"
+            required
+          />
+          <button type="submit">Start custom timer</button>
+        </form>
+
+        <div class="action-buttons">
+          <button id="start-pause-btn" disabled>Pause</button>
+          <button id="reset-btn" disabled>Reset</button>
+        </div>
+      </section>
+
+      <section class="timer-display" aria-live="polite">
+        <p id="status-text">Pick a preset or enter a custom duration to begin.</p>
+        <p id="time-left">00:00</p>
+      </section>
+
+      <section class="candle-stage" aria-label="Animated candle">
+        <div class="candle" id="candle">
+          <div class="wick"></div>
+          <div class="flame" id="flame"></div>
+          <div class="spark" id="spark-left"></div>
+          <div class="spark" id="spark-right"></div>
+          <div class="wax" id="wax"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
